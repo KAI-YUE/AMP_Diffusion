@@ -13,7 +13,7 @@ This project implements a minimal runnable example of the paper ``D-AMP via Diff
     pip3 install -r requirements.txt
     ```
 
-- 2. A pretrained model is available here [(model.pt)](https://drive.google.com/file/d/1BdxBZPDfeBxbLNA8kpJXeqkacYMEyoOw/view?usp=drive_link). Download it and put it under `model_zoo`. 
+- 2. A pretrained model is available here [(model.pt)](https://drive.google.com/file/d/1BdxBZPDfeBxbLNA8kpJXeqkacYMEyoOw/view?usp=sharing). Download it and put it under `model_zoo`. 
 - 3. Use `python3 main.py` to perform inference. The progressive results will be stored under `experiments` folder. 
 - 4. Modify `config/config.yaml` to change hyperparameters and setups. For example, one can change the number of iterations in AMP to $10$ by modifying the entry: 
 `amp_iters: 10`. 
