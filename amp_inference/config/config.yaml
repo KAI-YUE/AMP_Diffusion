@@ -1,0 +1,68 @@
+device: cuda
+seed: 4320 # peppers
+debug: True
+debug: False
+
+# AMP related parameters
+amp_iters: 10
+subrate: 0.2
+batch_size: 1
+Aperturb_snr: 
+# - -5
+# - 0
+# - 5
+# - 10
+# - 15
+- 20
+
+snr_db:
+# - -5
+# - 0
+# - 5
+# - 10
+# - 15
+# - 20
+- 20
+
+
+# signal source
+signal_source: "img"
+source_bound: 255
+pixel_scaling: 1  # scaling factor to mse calculation, 1 for [0, 255] images
+
+
+signal_type: "grey" # "rgb" | "grey"
+
+# Denoiser configurations
+denoiser: "ccunet"
+
+
+# ccunet ablation 
+checkpoint: "model_zoo/model.pt"
+
+denoisers:
+# - "gaussian"
+- "ccunet"
+
+upperbound: 1000
+dropout_ratio: 0.15
+
+# Simulation dataset configurations
+dataset: "bsd"
+data_path: "data/"
+
+
+# Log configurations
+output_folder: "experiments"
+test_interval: 1
+print_every:   10
+sample_every:  250
+visualize_every: 10
+log_level:   "INFO"
+log_file:    "./train.log"
+
+
+output2folder: False
+
+
+

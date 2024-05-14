@@ -1,0 +1,68 @@
+# device: "cuda" | "cpu"
+device: cuda
+seed: 385
+debug: True
+debug: False
+
+# hyperparameters and model type
+# momentum:         momentum settings for SGD  
+epochs: 150
+batch_size: 48
+# batch_size: 128
+workers: 1
+#-------------------
+optimizer: "AdamW"
+nesterov: True
+lr: 1.e-3
+min_lr: 1.e-6
+momentum: 0.9
+weight_decay: 1.e-4
+
+grad_clip: 1.
+
+#-------------------
+scheduler: "CosineAnnealingLR"
+# weight_decay: 0.01
+train_error: 0.001       # when to stop training
+
+model: "unet"
+# model: "cgen"
+# model: "gen"
+checkpoint_path: ""
+pretrained: False
+
+# unet configurations
+upperbound: 1000
+std_bound: 150
+dropout_ratio: 0.15
+
+# Simulation dataset configurations
+# dataset: "bsd"
+raw_data_path: "data/gt"
+# paired_data_path: "data/noise"
+
+dataset: "bsd"
+data_path: "data/gt"
+
+# prior distribution configurations
+shape: 1
+scale: 2000
+
+denominator: 255
+# denominator: 16
+
+# Log configurations
+output_folder: "experiments"
+test_interval: 1
+print_every:   10
+sample_every:  200
+visualize_every: 10
+log_level:   "INFO"
+log_file:    "./train.log"
+
+# loss scaling factors
+percep: 0.005
+style: 10
+l1: 1.
+
+stop: 100
