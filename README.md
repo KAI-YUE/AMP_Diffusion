@@ -30,6 +30,6 @@ This project implements a minimal runnable example of the paper ``D-AMP via Diff
 - 2. `amp_train/data` folder contains the preprocessed dataset. 
   - 2.1 `data/val/gt` contains the ground truth images. Each subfolder (`0`) means the quantized $\sigma$, which can be equivalently treated as the label. This label is required as the neural network input. 
   - 2.2 `data/val/noise` contains the noisy images. Again, each  subfolder (`0`) means the quantized $\sigma$. Each folder pairs with a counterpart under `val/gt`. 
-  - 2.3 `data/gt/datapair.dat` and `data/noise/datapair.dat` define the path of each training image. This data structure is crafted to help SGD mini-batch sampling with loading all samples in the memory. 
+  - 2.3 `data/gt/datapair.dat` and `data/noise/datapair.dat` define the path of each training image. This data structure is crafted to help SGD mini-batch sampling without loading all samples in the memory. 
 - 3. Modify `config/config.yaml` to change hyperparameters and setups. For example, one can change the learning rate to 0.01 by modifying the entry to `lr: 1.e-2`. 
 
